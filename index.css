@@ -1,0 +1,206 @@
+@font-face {
+    font-family: numberfont;
+    src: url(Blippo\ Black\ Regular.otf);
+}
+
+body {
+    background-image: url(giles.png);
+    background-size: 100vw 100vh;
+}
+
+#board {
+    background: #336;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.title {
+    color: orange;
+    text-align: center;
+    font-size: 10vh;
+    margin: 5vh 10vw;
+    font-family: numberfont;
+}
+
+.numberwang {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 10vh;
+    font-family: numberfont;
+    text-align: center;
+    text-shadow: 5px 5px 10px #FF0000;
+    opacity: 0;
+}
+
+.numberwang.wang {
+    opacity: 1;
+    animation: colorAnim 2s linear 0s 1.5, shadowAnim 2s linear 0s 1.5, scaleAnim 1s ease-in-out 0s 3;
+}
+
+@keyframes colorAnim {
+    from {
+        color: #6666ff;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #ff3399;
+    }
+    100% {
+        color: #6666ff;
+    }
+}
+
+@keyframes shadowAnim {
+    from {
+        text-shadow: 5px 5px 10px #6666ff;
+    }
+    10% {
+        text-shadow: 5px 5px 10px #00ff00;
+    }
+    50% {
+        text-shadow: 5px 5px 10px #ff3399;
+    }
+    75% {
+        text-shadow: 5px 5px 10px #6666ff;
+    }
+    100% {
+        text-shadow: 5px 5px 10px #0099ff;
+    }
+}
+
+@keyframes scaleAnim {
+    from {
+        transform: translate(-50%, -50%) rotate(-30deg) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-30deg) scale(2);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-30deg) scale(1);
+    }
+}
+
+.rotatetheboard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vh;
+    font-family: numberfont;
+    text-align: center;
+    opacity: 0;
+}
+
+.rotate .rotatetheboard {
+    opacity: 1;
+}
+
+.guesses {
+    background: rgb(51, 73, 102);
+    box-shadow: 5px 5px 15px 5px #000000;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+.rotate {
+    animation: rotateAnim 15s linear 1;
+}
+
+@keyframes rotateAnim {
+    from {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(10deg) rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.guess {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box {
+    width: 8vw;
+    height: 8vw;
+    margin: 1vw;
+    text-align: center;
+    line-height: 8vw;
+    border-radius: 1vw;
+    font-weight: bold;
+    font-size: 3vw;
+    background: lightgray;
+}
+
+.box.nope {
+    background: grey;
+}
+
+.box.maybe {
+    background: orange;
+}
+
+.box.yes {
+    background: greenyellow;
+}
+
+.numpad {
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.num {
+    width: 5vw;
+    height: 5vw;
+    line-height: 5vw;
+    text-align: center;
+    font-size: 3vw;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 1vw;
+    background: grey;
+    color: white;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.enter {
+    width: 10vw;
+    height: 5vw;
+    line-height: 5vw;
+    text-align: center;
+    font-size: 3vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 1vw;
+    background: grey;
+    color: white;
+    user-select: none;
+    -webkit-user-select: none;
+}
